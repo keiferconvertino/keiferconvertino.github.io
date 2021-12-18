@@ -1,9 +1,10 @@
+* {
+  font-family: 'Consolas', monospace;
 
+}
 
 .App {
   text-align: center;
-  font-family: 'Consolas', monospace;
-
 }
 
 .App-logo {
@@ -41,13 +42,26 @@
 }
 
 a {
+  display: inline-block;
   text-decoration: none;
   color: black;
 }
 
-a:hover {
+a:hover{
   text-decoration: none;
   color: rgb(0, 126, 158);
+}
+
+*:hover>.underline, .active>.underline {
+	width: 100%;
+}
+
+.underline {
+	display: block;
+	height: 2px;
+	margin: 0 auto;
+	width: 0;
+	transition: width .25s linear;
 }
 .top {
   top: 0;
@@ -62,6 +76,69 @@ a:hover {
   transform: translateX(-50%);
 
 }
+
+.carousel {
+  
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(25%);
+
+}
+
+.imgContainer {
+  display:block;
+	box-sizing: border-box;
+	position: relative;
+}
+.imgCarousel {
+  margin: 10px;
+}
+.imgContainer::before {
+	top: 0;
+	left: 0;
+}
+
+.imgContainer::before, .imgContainer::after {
+	border: 1px solid transparent;
+	width: 0;
+	height: 0;
+	box-sizing: inherit;
+	content: '';
+	position: absolute;
+}
+
+.imgContainer::after {
+	bottom: 0;
+	right: 0;
+}
+
+.imgContainer.loaded::before, .imgContainer.loaded::after {
+	width: 100%;
+	height: 100%;
+}
+
+.imgContainer.loaded::before {
+  border-top-color: rgb(0, 0, 0);
+	border-right-color: rgb(0, 0, 0);
+	transition: width 0.125s ease-out, height 0.125s ease-out 0.125s, border-radius .5s ease-out 0.5s;
+}
+
+.imgContainer.loaded::after {
+  border-bottom-color: rgb(0, 0, 0);
+	border-left-color: rgb(0, 0, 0);
+	transition: border-color 0s ease-out 0.25s, width 0.125s ease-out 0.25s, height 0.125s ease-out 0.325s, border-radius .5s ease-out 0.5s;
+}
+
+.carouselText {
+  margin-top: 20px;
+  font-style: italic;
+}
+
+
+.imgCarousel {
+	transition: 1.0s;
+}
 .globe {
   margin-top: 100px;
 }
@@ -73,6 +150,30 @@ a:hover {
 
   opacity: 0;
 	transition: 0.5s;
+}
+
+.main-pic {
+	margin-top: 25px;
+	left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+
+  opacity: 0;
+	transition: 0.5s;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+.back {
+  margin-left: 5px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.carouselText {
+  text-align: center;
 }
 .App-header {
   background-color: #000000;

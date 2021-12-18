@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Globe from 'react-globe.gl'
 import incon from './incon.json'
+import consolas from './consolas.json'
 import { useEffect, useRef, useState } from 'react';
 import {Link} from 'react-router-dom'
 
@@ -13,19 +14,19 @@ let labels = [
   {
     lat : 41.372108,
     long :-73.921120,
-    label : "New York",
+    label : "NEW YORK",
     color: 'rgba(255, 255, 255, 1)'
   },
   {
     lat : 29.717394,
     long :-95.401833,
-    label : "Rice University",
+    label : "RICE UNIVERSITY",
     color: 'rgba(255, 255, 255, 1)'
   },
   {
     lat : 37.484928,
     long : -122.148201,
-    label : "Meta",
+    label : "META",
     color: 'rgba(255, 255, 255, 1)'
   }
 ]
@@ -33,6 +34,7 @@ let labels = [
 let path = [g,h,sf]
 
 function App() {
+
 
   useEffect(() => {
     let header = document.querySelector('#intro');
@@ -65,6 +67,7 @@ function App() {
     let stepDenominator = 1;
     if (window.localStorage.stepDenominator)
         stepDenominator = window.localStorage.stepDenominator;
+
     let i = 0;
     let update = () => {
         let step = anim[i];
@@ -82,7 +85,7 @@ function App() {
         }
     }
     update();
-  })
+  }, [])
 
   const globeEl = useRef();
 
@@ -106,7 +109,7 @@ function App() {
         
         <div className='main' id= 'main'>
           <h3>
-            Hello! I am a 21 year old developer currently working for Meta in San Francisco.<br></br> Check out my <Link to='/experience' className='experience'>Experience</Link>, <Link  to='/projects' className='projects'>Projects</Link>, or even my <Link  to='/photos' className='photos'>Photography</Link>!
+            Hello! I am a 22 year old developer currently working for Meta in San Francisco.<br></br> Check out my <Link to='/experience' className='experience'>Experience <span style= {{backgroundColor:"rgb(0, 126, 158)"}}className='underline'></span> </Link>, <Link  to='/projects' className='projects'>Projects <span style= {{backgroundColor:"rgb(0, 126, 158)"}}className='underline'></span> </Link>, or even my <Link  to='/photos' className='photos'>Photography <span style= {{backgroundColor:"rgb(0, 126, 158)"}}className='underline'></span> </Link>!
           </h3>
           <div className = "globe">
             <Globe
@@ -119,7 +122,7 @@ function App() {
               pointsData={labels}
               pointLat={d => d.lat}
               pointLng={d => d.long}
-              pointAltitude={d=>.075}
+              pointAltitude={d=>.05}
               pointRadius={0.225}
               pointColor={d => d.color}
               labelsData={labels}
@@ -130,8 +133,8 @@ function App() {
               labelDotRadius={d => 0}
               labelColor={d => d.color}
               labelResolution={2}
-              labelTypeFace={incon}
-              labelAltitude={d => .075}
+              labelTypeFace={consolas}
+              labelAltitude={d => .05}
               pathsData= {[path]}
               pathStroke={2.5}
               pathColor={() => ['rgba(255, 255, 255, 0.2)', 'rgba(255, 255, 255, 0.2)']}
