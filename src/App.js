@@ -60,6 +60,7 @@ function App() {
         { t: "KEIFER CONVERTI_", ms: 100 },
         { t: "KEIFER CONVERTIN_", ms: 100 },
         { t: "KEIFER CONVERTINO_", ms: 200 },
+        { t: "KEIFER CONVERTINO_", ms: 200 },
         { t: "KEIFER CONVERTINO ", ms: 200 },
         { t: "KEIFER CONVERTINO_", ms: 300 },
         { t: "KEIFER CONVERTINO", ms: 300 },
