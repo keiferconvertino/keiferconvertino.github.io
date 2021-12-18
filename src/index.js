@@ -2,11 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Photos from './components/Photos';
 import reportWebVitals from './reportWebVitals';
+import {Routes, Route, BrowserRouter} from 'react-router-dom'
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path = '/' element = {<App />}>
+        </Route>
+        <Route path = '/photos' element = {<Photos />}></Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
