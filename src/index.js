@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Photos from './components/photos/Photos';
+import Photos from './components/Photos';
 import reportWebVitals from './reportWebVitals';
 import {Routes, Route, BrowserRouter} from 'react-router-dom'
+import Experience from './components/Experience';
 
 
 
@@ -16,6 +17,7 @@ ReactDOM.render(
         <Route path = '/' element = {<App />}>
         </Route>
         <Route path = '/photos' element = {<Photos />}></Route>
+        <Route path = '/experience' element = {<Experience />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

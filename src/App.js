@@ -109,7 +109,10 @@ function App() {
         
         <div className='main' id= 'main'>
           <h3>
-            Hello! I am a 22 year old developer currently working for Meta in San Francisco.<br></br> Check out my <Link to='/experience' className='experience'>Experience <span style= {{backgroundColor:"rgb(0, 126, 158)"}}className='underline'></span> </Link>, <Link  to='/projects' className='projects'>Projects <span style= {{backgroundColor:"rgb(0, 126, 158)"}}className='underline'></span> </Link>, or even my <Link  to='/photos' className='photos'>Photography <span style= {{backgroundColor:"rgb(0, 126, 158)"}}className='underline'></span> </Link>!
+            Hello! I am a 22 year old developer currently working for Meta in San Francisco.<br></br> 
+            Check out my <Link to='/experience' className='experience'>Experience<span style= {{backgroundColor:"rgb(0, 126, 158)"}}className='underline'></span> </Link> or even my <Link  to='/photos' className='photos'>Photography <span style= {{backgroundColor:"rgb(0, 126, 158)"}}className='underline'></span> </Link>!
+
+            {/*, <Link  to='/projects' className='projects'>Projects <span style= {{backgroundColor:"rgb(0, 126, 158)"}}className='underline'></span> </Link>,  */}
           </h3>
           <div className = "globe">
             <Globe
