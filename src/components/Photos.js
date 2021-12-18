@@ -40,19 +40,18 @@ function Photos() {
         } else {
             return
         }
-        document.getElementById('imgContainer').classList.remove('loaded')
 
         document.getElementById('imgCarousel').classList.add('fadeOut')
+        document.getElementById('imgContainer').classList.remove('loaded')
         let imIndex = parseInt(document.getElementById('carouselText').innerText.split(' ')[0]) - 1
         setTimeout(() => {
             let newIndex = imIndex + change
             if (newIndex == -1) {
                 newIndex = images.length - 1
             }
-            console.log(newIndex % images.length)
             setImgIndex(newIndex % images.length)
             document.getElementById('imgCarousel').classList.remove('fadeOut')
-             document.getElementById('imgContainer').classList.add('loaded')
+            document.getElementById('imgContainer').classList.add('loaded')
 
         }, 500)
     }
