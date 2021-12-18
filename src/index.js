@@ -4,20 +4,20 @@ import './index.css';
 import App from './App';
 import Photos from './components/Photos';
 import reportWebVitals from './reportWebVitals';
-import {Routes, Route, BrowserRouter} from 'react-router-dom'
+import {Routes, Route, HashRouter} from 'react-router-dom'
 import Experience from './components/Experience';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path = '/' element = {<App />}>
         </Route>
         <Route path = '/photos' element = {<Photos />}></Route>
         <Route path = '/experience' element = {<Experience />}></Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
