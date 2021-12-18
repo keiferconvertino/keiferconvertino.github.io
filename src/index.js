@@ -8,9 +8,6 @@ import {Routes, Route, BrowserRouter} from 'react-router-dom'
 import Experience from './components/Experience';
 
 
-document.title = "Keifer Convertino"
-
-
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
