@@ -6,9 +6,9 @@ import consolas from './consolas.json'
 import { useEffect, useRef, useState } from 'react';
 import {Link} from 'react-router-dom'
 
-let g = [41.372108, -73.921120, 0, "New York"]
-let h = [29.717394, -95.401833, 0, "New York"]
-let sf = [37.484928, -122.148201, 0, "New York"]
+let g = [41.372108, -73.921120, 0]
+let h = [29.717394, -95.401833, 0]
+let sf = [37.484928, -122.148201, 0]
 
 let labels = [
   {
@@ -111,9 +111,11 @@ function App() {
           <h3>
             Hello! I am a 22 year old developer currently working for Meta in San Francisco.<br></br> 
             Check out my <Link to='/experience' className='experience'>Experience<span style= {{backgroundColor:"rgb(0, 126, 158)"}}className='underline'></span> </Link> or even my <Link  to='/photos' className='photos'>Photography <span style= {{backgroundColor:"rgb(0, 126, 158)"}}className='underline'></span> </Link>!
-
             {/*, <Link  to='/projects' className='projects'>Projects <span style= {{backgroundColor:"rgb(0, 126, 158)"}}className='underline'></span> </Link>,  */}
           </h3>
+          <h4 className='contact'>
+            <a className= 'info' href="mailto: keiferconvertino@gmail.com">Email</a>, <a className= 'info' href="https://www.linkedin.com/in/keifer-convertino/">Linkedin</a>, <a className= 'info' href = "https://github.com/keiferconvertino">GitHub</a>
+            </h4>
           <div className = "globe">
             <Globe
               ref={globeEl}
