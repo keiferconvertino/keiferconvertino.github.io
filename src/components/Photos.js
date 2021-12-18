@@ -74,10 +74,7 @@ function Photos() {
             { t: "PHOTOGRA_", ms: 100 },
             { t: "PHOTOGRAP_", ms: 100 },
             { t: "PHOTOGRAPH_", ms: 100 },
-            { t: "PHOTOGRAPHY_", ms: 200 },
-            { t: "PHOTOGRAPHY", ms: 200 },
-            { t: "PHOTOGRAPHY_", ms: 300 },
-            { t: "PHOTOGRAPHY", ms: 300 },
+            { t: "PHOTOGRAPHY", ms: 200 }
         ];
         let stepDenominator = 1.75;
         let i = 0;

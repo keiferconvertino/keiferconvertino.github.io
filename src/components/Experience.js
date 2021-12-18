@@ -44,10 +44,7 @@ function Experience() {
             { t: "EXPERIE_", ms: 100 },
             { t: "EXPERIEN_", ms: 100 },
             { t: "EXPERIENC_", ms: 100 },
-            { t: "EXPERIENCE_", ms: 100 },
-            { t: "EXPERIENCE", ms: 200 },
-            { t: "EXPERIENCE_", ms: 300 },
-            { t: "EXPERIENCE", ms: 300 },
+            { t: "EXPERIENCE", ms: 100 }
         ];
         let stepDenominator = 1.75;
         let i = 0;

@@ -59,11 +59,9 @@ function App() {
         { t: "KEIFER CONVERT_", ms: 100 },
         { t: "KEIFER CONVERTI_", ms: 100 },
         { t: "KEIFER CONVERTIN_", ms: 100 },
-        { t: "KEIFER CONVERTINO_", ms: 200 },
-        { t: "KEIFER CONVERTINO_", ms: 200 },
-        { t: "KEIFER CONVERTINO ", ms: 200 },
-        { t: "KEIFER CONVERTINO_", ms: 300 },
-        { t: "KEIFER CONVERTINO", ms: 300 },
+        { t: "KEIFER CONVERTINO", ms: 200 },
+        { t: "KEIFER CONVERTINO", ms: 200 },
+        { t: "KEIFER CONVERTINO", ms: 200 }
     ];
     let stepDenominator = 1;
     if (window.localStorage.stepDenominator)
