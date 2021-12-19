@@ -15,7 +15,7 @@ function Experience() {
             i++;
     
             if (i < string.length + 1)
-                setTimeout(update, 10);
+                setTimeout(update, 50 / string.length);
             else {
                 target.innerText = step;
                 if (next != null) {
@@ -81,7 +81,7 @@ function Experience() {
                     animateWords('Researched and implemented a Thompson Sampling algorithm in Python that automated the distribution of web traffic towards landing pages for company products, entirely freeing the hours spent each week manually adjusting traffic rates.', 'tightropeInfo1', () =>
                     animateWords('Developed a REST API with Flask responsible for servicing this algorithm across company systems.', 'tightropeInfo2', () =>
                     animateWords('Increased the accuracy of revenue projections by over 20% by replacing old predictive models with a machine learning solution using XGBoost models on AWS Sagemaker.', 'tightropeInfo3', () =>
-                    animateWords('Overhauled content management system with a Git-based static site generator workflow using Gatsby & React, allowing the creation of fast static sites that can use shared modular components.', 'tightropeInfo4', )))))))))))))))))
+                    animateWords('Overhauled content management system with a Git-based static site generator workflow using Gatsby & React, allowing the creation of fast static sites that can use shared modular components.', 'tightropeInfo4', null)))))))))))))))))
                     )))))))
                 }, 500);
             }
