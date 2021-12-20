@@ -21,7 +21,9 @@ function Photos() {
         setTimeout(() => {
             setImgIndex((imgIndex + 1) % images.length)
             document.getElementById('imgCarousel').classList.remove('fadeOut')
-             document.getElementById('imgContainer').classList.add('loaded')
+            setTimeout(() => {
+                document.getElementById('imgContainer').classList.add('loaded')
+            }, 300);
 
         }, 500)
 
@@ -51,7 +53,9 @@ function Photos() {
             }
             setImgIndex(newIndex % images.length)
             document.getElementById('imgCarousel').classList.remove('fadeOut')
-            document.getElementById('imgContainer').classList.add('loaded')
+            setTimeout(() => {
+                document.getElementById('imgContainer').classList.add('loaded')
+            }, 300);
 
         }, 500)
     }
@@ -90,7 +94,10 @@ function Photos() {
                 
                 setTimeout(() => {
                     document.getElementById('main-pic').style.opacity = 1;
-                    document.getElementById('imgContainer').classList.add('loaded')
+
+                    setTimeout(() => {
+                        document.getElementById('imgContainer').classList.add('loaded')
+                    }, 400);
 
                 }, 500);
             }
