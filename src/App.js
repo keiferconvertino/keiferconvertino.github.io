@@ -90,7 +90,7 @@ function App() {
 
   useEffect(() => {
     globeEl.current.controls().autoRotate = true;
-    globeEl.current.controls().autoRotateSpeed = 1;
+    globeEl.current.controls().autoRotateSpeed = 0.75;
     // globeEl.current.controls().enabled = false;
     globeEl.current.controls().object.position.x = -200;
     globeEl.current.controls().object.position.y = 150;
@@ -126,7 +126,7 @@ function App() {
               pointsData={labels}
               pointLat={d => d.lat}
               pointLng={d => d.long}
-              pointAltitude={d=>.05}
+              pointAltitude={d=>.025}
               pointRadius={0.225}
               pointColor={d => d.color}
               labelsData={labels}
@@ -138,9 +138,9 @@ function App() {
               labelColor={d => d.color}
               labelResolution={2}
               labelTypeFace={consolas}
-              labelAltitude={d => .05}
+              labelAltitude={d => .025}
               pathsData= {[path]}
-              pathStroke={2.5}
+              pathStroke={1.5}
               pathColor={() => ['rgba(255, 255, 255, 0.2)', 'rgba(255, 255, 255, 0.2)']}
               pathDashLength={0.02}
               pathDashGap={0.03}
