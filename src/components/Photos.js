@@ -14,12 +14,16 @@ function Photos() {
 
 
 
-    function changeImg() {
+    function changeImg(dir) {
         document.getElementById('imgContainer').classList.remove('loaded')
 
         document.getElementById('imgCarousel').classList.add('fadeOut')
         setTimeout(() => {
-            setImgIndex((imgIndex + 1) % images.length)
+            if (imgIndex + dir == -1) {
+                setImgIndex(images.length - 1 % images.length)
+            } else {
+                setImgIndex((imgIndex + dir) % images.length)
+            }
             document.getElementById('imgCarousel').classList.remove('fadeOut')
             setTimeout(() => {
                 document.getElementById('imgContainer').classList.add('loaded')
@@ -45,7 +49,7 @@ function Photos() {
 
         document.getElementById('imgCarousel').classList.add('fadeOut')
         document.getElementById('imgContainer').classList.remove('loaded')
-        let imIndex = parseInt(document.getElementById('carouselText').innerText.split(' ')[0]) - 1
+        let imIndex = parseInt(document.getElementById('carouselText').innerText.split(' ')[1]) - 1
         setTimeout(() => {
             let newIndex = imIndex + change
             if (newIndex == -1) {
@@ -114,11 +118,11 @@ function Photos() {
             <h1 className='top-p' id="top-p">
             </h1>
             <div className='main-pic' id= 'main-pic'>
-                <div id = "carousel" onClick = {changeImg}  className = "carousel">
-                    <div id = "imgContainer"className = 'imgContainer'>
+                <div id = "carousel"  className = "carousel">
+                    <div id = "imgContainer" onClick = {()=>changeImg(1)}className = 'imgContainer'>
                         <img id = "imgCarousel" className = 'imgCarousel' src = {photo_path + images[imgIndex] + '.jpg'}></img>
                     </div>
-                    <div id = "carouselText" className = "carouselText">{imgIndex+1} / {images.length}</div>
+                    <div id = "carouselText" className = "carouselText"><span onClick = {() => changeImg(-1)} id ="leftArrow">{'< '}</span> {imgIndex+1} / {images.length} <span onClick = {() => changeImg(1)} id ="rightArrow">{' >'}</span></div>
                 </div>
           </div>
         </div>

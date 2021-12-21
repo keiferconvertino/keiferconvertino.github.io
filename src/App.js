@@ -15,19 +15,22 @@ let labels = [
     lat : 41.372108,
     long :-73.921120,
     label : "NEW YORK",
-    color: 'rgba(255, 255, 255, 1)'
+    color: 'rgba(100, 100, 100, 1)',
+    length: .025
   },
   {
     lat : 29.717394,
     long :-95.401833,
     label : "RICE UNIVERSITY",
-    color: 'rgba(255, 255, 255, 1)'
+    color: 'rgba(150, 150, 150, 1)',
+    length: .035
   },
   {
     lat : 37.484928,
     long : -122.148201,
     label : "META",
-    color: 'rgba(255, 255, 255, 1)'
+    color: 'rgba(255, 255, 255, 1)',
+    length: .05
   }
 ]
 
@@ -90,7 +93,7 @@ function App() {
 
   useEffect(() => {
     globeEl.current.controls().autoRotate = true;
-    globeEl.current.controls().autoRotateSpeed = 0.75;
+    globeEl.current.controls().autoRotateSpeed = 0.65;
     // globeEl.current.controls().enabled = false;
     globeEl.current.controls().object.position.x = -200;
     globeEl.current.controls().object.position.y = 150;
@@ -133,7 +136,7 @@ function App() {
               labelLat={d => d.lat}
               labelLng={d => d.long}
               labelText={d => d.label}
-              labelSize={d => 2.0}
+              labelSize={d => 2}
               labelDotRadius={d => 0}
               labelColor={d => d.color}
               labelResolution={2}
@@ -141,7 +144,7 @@ function App() {
               labelAltitude={d => .025}
               pathsData= {[path]}
               pathStroke={1.5}
-              pathColor={() => ['rgba(255, 255, 255, 0.2)', 'rgba(255, 255, 255, 0.2)']}
+              pathColor={() => ['rgba(120, 120, 120, 0.2)', 'rgba(255, 255, 255, 0.2)']}
               pathDashLength={0.02}
               pathDashGap={0.03}
               pathDashAnimateTime={25000}
