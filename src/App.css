@@ -102,6 +102,7 @@ a.info:hover{
 }
 .imgCarousel {
   margin: 10px;
+  margin-bottom: 8px;
   max-width: 80vw;
 }
 .imgContainer::before {

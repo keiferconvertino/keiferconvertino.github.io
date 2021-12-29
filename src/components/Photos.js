@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 
 const images = ['soccer', 'zach2',  'scratches', 'jn3', 'andy', 'angel', 'bike', 'blur', 'blur2', 'door', 'eth', 'jackson',
-'jn', 'jn2',  'kite', 'pond', 'ross2', 'ross1',  'skyspace', 
+'jn', 'jn2',  'kite', 'pond', 'ross2',  'skyspace', 
 'snow', 'streetLight', 'trees', 'zach']
 const photo_path = '/images/'
 

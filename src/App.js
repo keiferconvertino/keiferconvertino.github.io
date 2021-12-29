@@ -14,23 +14,26 @@ let labels = [
   {
     lat : 41.372108,
     long :-73.921120,
-    label : "NEW YORK",
+    label : "NY",
     color: 'rgba(100, 100, 100, 1)',
-    length: .025
+    length: .025,
+    size: 1.75
   },
   {
     lat : 29.717394,
     long :-95.401833,
-    label : "RICE UNIVERSITY",
+    label : "Rice University",
     color: 'rgba(150, 150, 150, 1)',
-    length: .035
+    length: .035,
+    size: 1.5
   },
   {
     lat : 37.484928,
     long : -122.148201,
-    label : "META",
+    label : "Meta",
     color: 'rgba(255, 255, 255, 1)',
-    length: .05
+    length: .05,
+    size: 1.75
   }
 ]
 
@@ -136,7 +139,7 @@ function App() {
               labelLat={d => d.lat}
               labelLng={d => d.long}
               labelText={d => d.label}
-              labelSize={d => 2}
+              labelSize={d => d.size}
               labelDotRadius={d => 0}
               labelColor={d => d.color}
               labelResolution={2}
