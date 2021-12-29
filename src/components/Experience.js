@@ -15,7 +15,7 @@ function Experience() {
             i++;
     
             if (i < string.length + 1)
-                setTimeout(update, 50 / string.length);
+                setTimeout(update, 100 / string.length);
             else {
                 target.innerText = step;
                 if (next != null) {
@@ -62,18 +62,9 @@ function Experience() {
                     animateWords('Houston, TX', 'htx',() => 
                     animateWords('B.A. in Computer Science', 'major', () => 
                     animateWords('2018 - 2022', 'eduYear', () => 
-                    animateWords('3.91 GPA', 'gpa', () =>
-                    animateWords('Meta', 'metaHeader', () =>
-                    animateWords('Menlo Park, CA', 'metaLoc', () =>
-                    animateWords('Software Engineer (EC3)', 'metaTitle', () =>
-                    animateWords('August 2022 - Current', 'metaYear', () =>
-                    animateWords('Incoming', 'metaInfo1', () =>
-                    animateWords('Indeed', 'indeedHeader', () =>
-                    animateWords('Austin, TX', 'indeedLoc', () =>
-                    animateWords('Software Developer Intern', 'indeedTitle', () =>
-                    animateWords('May 2021 - August 2021', 'indeedYear', () =>
-                    animateWords('Leveraged Apache Kafka in Java to develop a service for consuming, processing, and publishing application outcome logs in real time.', 'indeedInfo1', () =>
-                    animateWords('Designed a pipeline on top of this service that reduced the latency of internal datasets from 3 hours to 10-30 minutes.', 'indeedInfo2', () =>
+                    animateWords('3.91 GPA', 'gpa', null)))))
+                    
+                   
                     animateWords('Tightrope Interactive', 'tightropeHeader', () =>
                     animateWords('Cold Spring, NY', 'tightropeLoc', () =>
                     animateWords('Software Engineer Intern', 'tightropeTitle', () =>
@@ -81,9 +72,21 @@ function Experience() {
                     animateWords('Researched and implemented a Thompson Sampling algorithm in Python that automated the distribution of web traffic towards landing pages for company products, entirely freeing the hours spent each week manually adjusting traffic rates.', 'tightropeInfo1', () =>
                     animateWords('Developed a REST API with Flask responsible for servicing this algorithm across company systems.', 'tightropeInfo2', () =>
                     animateWords('Increased the accuracy of revenue projections by over 20% by replacing old predictive models with a machine learning solution using XGBoost models on AWS Sagemaker.', 'tightropeInfo3', () =>
-                    animateWords('Overhauled content management system with a Git-based static site generator workflow using Gatsby & React, allowing the creation of fast static sites that can use shared modular components.', 'tightropeInfo4', null)))))))))))))))))
-                    )))))))
-                }, 500);
+                    animateWords('Overhauled content management system with a Git-based static site generator workflow using Gatsby & React, allowing the creation of fast static sites that can use shared modular components.', 'tightropeInfo4', null))))))))
+                    animateWords('Meta', 'metaHeader', () =>
+                    animateWords('Menlo Park, CA', 'metaLoc', () =>
+                    animateWords('Software Engineer (EC3)', 'metaTitle', () =>
+                    animateWords('August 2022 - Current', 'metaYear', () =>
+                    animateWords('Incoming', 'metaInfo1', null)))))
+
+                    animateWords('Indeed', 'indeedHeader', () =>
+                    animateWords('Austin, TX', 'indeedLoc', () =>
+                    animateWords('Software Developer Intern', 'indeedTitle', () =>
+                    animateWords('May 2021 - August 2021', 'indeedYear', () =>
+                    animateWords('Leveraged Apache Kafka in Java to develop a service for consuming, processing, and publishing application outcome logs in real time.', 'indeedInfo1', () =>
+                    animateWords('Designed a pipeline on top of this service that reduced the latency of internal datasets from 3 hours to 10-30 minutes.', 'indeedInfo2', null))))
+                    ))
+                }, 1000);
             }
         }
         update();
