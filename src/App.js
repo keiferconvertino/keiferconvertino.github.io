@@ -14,10 +14,10 @@ let labels = [
   {
     lat : 41.372108,
     long :-73.921120,
-    label : "NY",
+    label : "New York",
     color: 'rgba(100, 100, 100, 1)',
     length: .025,
-    size: 1.75
+    size: 1.65
   },
   {
     lat : 29.717394,
