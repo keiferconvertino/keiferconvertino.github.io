@@ -5,31 +5,53 @@ import { useEffect, useRef, useState } from 'react';
 const images = ['soccer', 'zach2',  'scratches', 'jn3', 'andy', 'angel', 'bike', 'blur', 'blur2', 'door', 'eth', 'jackson',
 'jn', 'jn2',  'kite', 'pond', 'ross2',  'skyspace', 
 'snow', 'streetLight', 'trees', 'zach']
+const images2 = ['1', '2',  '3', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18']
 const photo_path = '/images/'
 
 
 function Photos() {
 
     const [imgIndex, setImgIndex] = useState(0)
+    const [imgs, setImgs] = useState(images)
+    const [imgYear, setImgYear] = useState(2021)
 
-
+    function changeImgYear(year) {
+        document.getElementById('imgCarousel').classList.add('fadeOut')
+        document.getElementById('imgContainer').classList.remove('loaded')
+        if (year == 0) {
+            setImgs(images)
+            setImgYear(2021)
+        } else {
+            setImgs(images2)
+            setImgYear(2022)
+        }
+        setImgIndex(0)
+        document.getElementById('imgCarousel').classList.remove('fadeOut')
+            setTimeout(() => {
+                document.getElementById('imgContainer').classList.add('loaded')
+                
+            }, 300);
+    }
 
     function changeImg(dir) {
         document.getElementById('imgContainer').classList.remove('loaded')
 
         document.getElementById('imgCarousel').classList.add('fadeOut')
         setTimeout(() => {
-            if (imgIndex + dir == -1) {
-                setImgIndex(images.length - 1 % images.length)
-            } else {
-                setImgIndex((imgIndex + dir) % images.length)
+            let imIndex = parseInt(document.getElementById('carouselText').innerText.split(' ')[1]) - 1
+
+            let newIndex = imIndex + dir
+            if (newIndex == -1) {
+                newIndex = imgs.length - 1
             }
+            setImgIndex(newIndex % imgs.length)
             document.getElementById('imgCarousel').classList.remove('fadeOut')
             setTimeout(() => {
                 document.getElementById('imgContainer').classList.add('loaded')
+                
             }, 300);
-
         }, 500)
+    
 
         
     }
@@ -53,9 +75,9 @@ function Photos() {
         setTimeout(() => {
             let newIndex = imIndex + change
             if (newIndex == -1) {
-                newIndex = images.length - 1
+                newIndex = imgs.length - 1
             }
-            setImgIndex(newIndex % images.length)
+            setImgIndex(newIndex % imgs.length)
             document.getElementById('imgCarousel').classList.remove('fadeOut')
             setTimeout(() => {
                 document.getElementById('imgContainer').classList.add('loaded')
@@ -117,12 +139,30 @@ function Photos() {
             <Link className = "back" to='/'>back</Link>
             <h1 className='top-p' id="top-p">
             </h1>
+
             <div className='main-pic' id= 'main-pic'>
+            <div className = "photoSelect">
+                {imgYear == 2021 && (
+                    <div style = {{display:'flex'}}>
+                        <div className='photoYear2021' style ={{fontWeight: 'bold'}} onClick = {()=>changeImgYear(0)}>2021</div>
+                        <div className = "photoYear2022" onClick = {()=>changeImgYear(1)}>2022</div>
+                    </div>
+                    )
+                }
+                {imgYear == 2022 && (
+                    <div style = {{display:'flex'}}>
+                        <div className='photoYear2021'  onClick = {()=>changeImgYear(0)}>2021</div>
+                        <div className = "photoYear2022" style ={{fontWeight: 'bold'}} onClick = {()=>changeImgYear(1)}>2022</div>
+                    </div>
+                    )
+                }
+                
+            </div>
                 <div id = "carousel"  className = "carousel">
                     <div id = "imgContainer" onClick = {()=>changeImg(1)}className = 'imgContainer'>
-                        <img id = "imgCarousel" className = 'imgCarousel' src = {photo_path + images[imgIndex] + '.jpg'}></img>
+                        <img id = "imgCarousel" className = 'imgCarousel' src = {photo_path + imgs[imgIndex] + '.jpg'}></img>
                     </div>
-                    <div id = "carouselText" className = "carouselText"><span onClick = {() => changeImg(-1)} id ="leftArrow">{'< '}</span> {imgIndex+1} / {images.length} <span onClick = {() => changeImg(1)} id ="rightArrow">{' >'}</span></div>
+                    <div id = "carouselText" className = "carouselText"><span onClick = {() => changeImg(-1)} id ="leftArrow">{'< '}</span> {imgIndex+1} / {imgs.length} <span onClick = {() => changeImg(1)} id ="rightArrow">{' >'}</span></div>
                 </div>
           </div>
         </div>

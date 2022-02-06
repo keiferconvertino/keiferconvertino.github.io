@@ -104,12 +104,31 @@ a.info:hover{
   margin: 10px;
   margin-bottom: 8px;
   max-width: 80vw;
+  max-height:400px;
 }
 .imgContainer::before {
 	top: 0;
 	left: 0;
+  
 }
 
+.photoYear2021 {
+  margin-top: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 0px;
+}
+.photoYear2022 {
+  margin-top: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 0px;
+}
+.photoSelect {
+  margin-top: 25px;
+  display: flex;
+
+}
 .imgContainer::before, .imgContainer::after {
 	border: 1px solid transparent;
 	width: 0;
