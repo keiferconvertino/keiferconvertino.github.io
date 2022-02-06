@@ -20,10 +20,8 @@ function Photos() {
         document.getElementById('imgContainer').classList.remove('loaded')
         if (year == 0) {
             setImgs(images)
-            setImgYear(2021)
         } else {
             setImgs(images2)
-            setImgYear(2022)
         }
         setImgIndex(0)
         document.getElementById('imgCarousel').classList.remove('fadeOut')
@@ -39,12 +37,13 @@ function Photos() {
         document.getElementById('imgCarousel').classList.add('fadeOut')
         setTimeout(() => {
             let imIndex = parseInt(document.getElementById('carouselText').innerText.split(' ')[1]) - 1
-
+            let imLength = parseInt(document.getElementById('carouselText').innerText.split(' ')[3])
+            
             let newIndex = imIndex + dir
             if (newIndex == -1) {
-                newIndex = imgs.length - 1
+                newIndex = imLength
             }
-            setImgIndex(newIndex % imgs.length)
+            setImgIndex(newIndex % imLength)
             document.getElementById('imgCarousel').classList.remove('fadeOut')
             setTimeout(() => {
                 document.getElementById('imgContainer').classList.add('loaded')
@@ -74,14 +73,17 @@ function Photos() {
         let imIndex = parseInt(document.getElementById('carouselText').innerText.split(' ')[1]) - 1
         setTimeout(() => {
             let newIndex = imIndex + change
+            let imLength = parseInt(document.getElementById('carouselText').innerText.split(' ')[3])
+
             if (newIndex == -1) {
-                newIndex = imgs.length - 1
+                newIndex = imLength - 1
             }
-            setImgIndex(newIndex % imgs.length)
+            setImgIndex(newIndex % imLength)
             document.getElementById('imgCarousel').classList.remove('fadeOut')
             setTimeout(() => {
                 document.getElementById('imgContainer').classList.add('loaded')
             }, 300);
+            console.log(newIndex % imLength)
 
         }, 500)
     }
