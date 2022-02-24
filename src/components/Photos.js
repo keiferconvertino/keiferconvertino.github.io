@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 const images = ['soccer', 'zach2',  'scratches', 'jn3', 'andy', 'angel', 'bike', 'blur', 'blur2', 'door', 'eth', 'jackson',
 'jn', 'jn2',  'kite', 'pond', 'ross2',  'skyspace', 
 'snow', 'streetLight', 'trees', 'zach']
-const images2 = ['1', '2',  '3', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18']
+const images2 = ['1', '2',  '3', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18', '19', '20', '21']
 const photo_path = '/images/'
 
 
@@ -20,8 +20,10 @@ function Photos() {
         document.getElementById('imgContainer').classList.remove('loaded')
         if (year == 0) {
             setImgs(images)
+            setImgYear(2021)
         } else {
             setImgs(images2)
+            setImgYear(2022)
         }
         setImgIndex(0)
         document.getElementById('imgCarousel').classList.remove('fadeOut')
@@ -83,7 +85,6 @@ function Photos() {
             setTimeout(() => {
                 document.getElementById('imgContainer').classList.add('loaded')
             }, 300);
-            console.log(newIndex % imLength)
 
         }, 500)
     }
